@@ -1,0 +1,32 @@
+.card-container {
+  margin-top: 8px;
+}
+
+.card-container > .card {
+  display: inline-flex;
+  break-inside: avoid;
+  margin-bottom: 6px;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+  background-color: #091e420a;
+  transition: 0.5s;
+  cursor: default;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.card-container > .card:hover {
+  background-color: #091e4214;
+}
+
+.card-container > .card > .card-markdown {
+  padding: 6px;
+  width: calc(100vw - 120px);
+}
+
+.card-container > .card > .card-delete-button-container {
+  float: right;
+  margin: auto;
+}

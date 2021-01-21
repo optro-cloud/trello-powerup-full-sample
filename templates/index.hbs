@@ -1,0 +1,29 @@
+<!-- This is the power-up root, used to integrate with the Trello UI -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{powerup_name}}</title>
+    <!-- Import the minimum css required to give it the 'Trello' feel -->
+    <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css"/>
+    <!-- Preload frequently used scripts to make your Power-up UI quick at the expense of bandwidth -->
+    <link rel="preload" href="./addon.js" as="script">
+</head>
+<body>
+<div style="margin: 12px;">
+    <h2>{{powerup_name}}</h2>
+    <p>This is the root of the Power-up 👋.</p>
+    <p>Trello uses this to start your Power-up and show UI elements 👀.</p>
+    <div style="padding: 6px;">
+        <h3>Next Steps for Developer</h3>
+        <div style="padding: 6px;">
+            <p>1. Go to <a href="https://trello.com/power-ups/{{powerup_id}}">Power-up Admin</a> and update the URL as appropriate</p>
+            <p>2. Add the Power-up to a Board via the Add Power-Up Menu (Choose Custom Filter)</p>
+            <p>3. Use your Power-up as you code!</p>
+        </div>
+    </div>
+</div>
+<!-- Enable using the Trello API from client.js -->
+<script src="https://p.trellocdn.com/power-up.min.js"></script>
+</body>
+</html>

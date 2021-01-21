@@ -1,0 +1,34 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["plugin:import/typescript","plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "plugins": ["import"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "indent": ["warn", 4],
+    "import/extensions": [
+      "off",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "comma-dangle": "off",
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": ["error", "unix"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      }
+    }
+  }
+}
