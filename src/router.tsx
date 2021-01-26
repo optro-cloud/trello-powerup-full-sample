@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { hot } from "react-hot-loader/root";
-import CardButton from "./card-button/CardButton";
-import BoardButton from "./board-button/BoardButton";
-import ShowSettings from "./show-settings/ShowSettings";
 
 const CardBackSection = React.lazy(() => import("./card-back-section/CardBackSection"));
+const CardButton = React.lazy(() => import("./card-button/CardButton"));
+const BoardButton = React.lazy(() => import ("./board-button/BoardButton"));
+const ShowAuthorization = React.lazy(() => import("./show-authorization/ShowAuthorization"));
+const ShowSettings = React.lazy(() => import("./show-settings/ShowSettings"));
 
 function PowerupRouter() {
     return (
@@ -20,6 +21,9 @@ function PowerupRouter() {
                     </Route>
                     <Route path="/board-button.html">
                         <BoardButton />
+                    </Route>
+                    <Route path="/show-authorization.html">
+                        <ShowAuthorization />
                     </Route>
                     <Route path="/show-settings.html">
                         <ShowSettings />

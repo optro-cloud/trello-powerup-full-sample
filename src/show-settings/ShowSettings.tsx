@@ -1,15 +1,19 @@
 import {hot} from "react-hot-loader/root";
 import * as React from "react";
 import "./styles.css";
-import {TrelloApi} from "../api/trello";
+import {removeAllNotes} from "../api/power-up";
 
-// @ts-ignore
-const trelloApi = new TrelloApi(TrelloPowerUp.iframe());
+const t = window.TrelloPowerUp.iframe();
 
 function ShowSettings() {
     return (
-        <div>
-            <p>Settings Here</p>
+        <div style={{padding: "4px"}}>
+            <p>Configure the Notes Power-Up.</p>
+            <button onClick={() => removeAllNotes(t, "shared")} className="mod-danger">
+                Delete All Public Notes
+            </button>
+            <hr/>
+            <p>Any additional settings should go here.</p>
         </div>
     );
 }

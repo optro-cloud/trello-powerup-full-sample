@@ -1,9 +1,11 @@
 .card-container {
   margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .card-container > .card {
-  display: inline-flex;
+  display: flex;
   break-inside: avoid;
   margin-bottom: 6px;
   padding-top: 6px;

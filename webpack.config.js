@@ -75,6 +75,11 @@ module.exports = (env) => {
                 "POWERUP_APP_KEY",
                 "OPTRO_API_KEY"
             ]),
+            new CopyWebpackPlugin({
+                patterns: [
+                    { from: "static", to: "static" },
+                ],
+            }),
             new MiniCssExtractPlugin(),
             // new BundleAnalyzerPlugin(),
             new HtmlWebpackPlugin({
@@ -112,6 +117,26 @@ module.exports = (env) => {
                 template: "templates/react.hbs",
                 favicon: "static/favicon.png",
                 filename: "board-button.html",
+                templateParameters: {
+                    powerup_name: process.env.POWERUP_NAME,
+                    powerup_app_key: process.env.POWERUP_APP_KEY
+                }
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ["addon"],
+                template: "templates/react.hbs",
+                favicon: "static/favicon.png",
+                filename: "show-authorization.html",
+                templateParameters: {
+                    powerup_name: process.env.POWERUP_NAME,
+                    powerup_app_key: process.env.POWERUP_APP_KEY
+                }
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ["addon"],
+                template: "templates/react.hbs",
+                favicon: "static/favicon.png",
+                filename: "show-settings.html",
                 templateParameters: {
                     powerup_name: process.env.POWERUP_NAME,
                     powerup_app_key: process.env.POWERUP_APP_KEY

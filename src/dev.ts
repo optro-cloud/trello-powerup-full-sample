@@ -1,10 +1,14 @@
-import getCurrentTime from "./api/utilities";
-
 const dotenv = require("dotenv");
 dotenv.config();
-
 const ngrok = require("ngrok");
 const nodemon = require("nodemon");
+
+function getCurrentTime(): string {
+    const now = new Date();
+    const hours = `${now.getHours() < 10 ? "0" : ""}${now.getHours()}`;
+    const mins = `${now.getMinutes() < 10 ? "0" : ""}${now.getMinutes()}`;
+    return `${hours}:${mins}`;
+}
 
 console.log(`⏰ ${getCurrentTime()} Creating a tunnel with ngrok for localhost:${process.env.PORT}...`);
 ngrok.connect({port: process.env.PORT}).then((tunnelUrl: string) => {

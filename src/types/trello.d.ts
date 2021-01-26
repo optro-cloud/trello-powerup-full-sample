@@ -58,25 +58,24 @@ export namespace Trello {
         // USER-FACING TYPES
 
         type CapabilityHandlers = {
-            'attachment-sections'?: (t: PowerUp.IFrame, options: {
-                entries: Attachment[];
-            }) => PromiseLike<(AttachmentSection | LazyAttachmentSection)[]>;
-            'attachment-thumbnail'?: () => void;
-            'board-buttons'?: (t: PowerUp.IFrame) => PromiseLike<(BoardButtonUrl | BoardButtonCallback)[]>;
-            'card-back-section'?: (t: PowerUp.IFrame) => PromiseLike<CardBackSection>;
-            'card-badges'?: (t: PowerUp.IFrame) => PromiseLike<(CardBadgeDynamic | CardBadge)[]>;
-            'card-buttons'?: (t: PowerUp.IFrame) => PromiseLike<CardButton[]>;
-            'card-detail-badges'?: (t: PowerUp.IFrame) => PromiseLike<(CardDetailBadgeDynamic | CardDetailBadge)[]>;
-            'card-from-url'?: () => void;
-            'format-url'?: () => void;
-            'list-actions'?: (t: PowerUp.IFrame) => PromiseLike<ListAction[]>;
-            'list-sorters'?: (t: PowerUp.IFrame) => PromiseLike<ListSorter[]>;
+            'attachment-sections'?: (t: PowerUp.IFrame, options: { entries: Attachment[]; }) => PromiseLike<(AttachmentSection | LazyAttachmentSection)[]> | AttachmentSection[];
+            'attachment-thumbnail'?: (t: PowerUp.IFrame, options: AttachmentThumbnailOptions) => PromiseLike<AttachmentThumbnail> | AttachmentThumbnail;
+            'board-buttons'?: (t: PowerUp.IFrame) => PromiseLike<(BoardButtonUrl | BoardButtonCallback)[]> | BoardButtonCallback[];
+            'card-back-section'?: (t: PowerUp.IFrame) => PromiseLike<CardBackSection> | CardBackSection;
+            'card-badges'?: (t: PowerUp.IFrame) => PromiseLike<(CardBadgeDynamic | CardBadge)[]> | CardBadgeDynamic[];
+            'card-buttons'?: (t: PowerUp.IFrame) => PromiseLike<CardButton[]> | CardButton[];
+            'card-detail-badges'?: (t: PowerUp.IFrame) => PromiseLike<(CardDetailBadgeDynamic | CardDetailBadge)[]> | CardDetailBadgeDynamic[];
+            'card-from-url'?: (t: Trello.PowerUp.IFrame, options: CardFromUrlOptions) => PromiseLike<CardFromUrlResponse> | CardFromUrlResponse;
+            'format-url'?: (t: Trello.PowerUp.IFrame, options: FormatUrlOptions) => void;
+            'list-actions'?: (t: PowerUp.IFrame) => PromiseLike<ListAction[]> | ListAction[];
+            'list-sorters'?: (t: PowerUp.IFrame) => PromiseLike<ListSorter[]> | ListSorter[];
             'on-enable'?: (t: PowerUp.IFrame) => PromiseLike<void>;
-            'on-disable'?: () => void;
-            'remove-data'?: () => void;
+            'on-disable'?: (t: Trello.PowerUp.IFrame) => void;
+            'remove-data'?: (t: Trello.PowerUp.IFrame) => void;
+            'save-attachment'?:  (t: Trello.PowerUp.IFrame, options: any) => void;
             'show-settings'?: (t: PowerUp.IFrame) => PromiseLike<void>;
-            'authorization-status'?: () => void;
-            'show-authorization'?: () => void;
+            'authorization-status'?: (t: PowerUp.IFrame, options: any) => PromiseLike<AuthorizationStatusResponse>;
+            'show-authorization'?: (t: Trello.PowerUp.IFrame) => void;
         };
 
         type Condition = 'admin' | 'always' | 'edit' | 'readonly' | 'signedIn' | 'signedOut';
@@ -87,9 +86,55 @@ export namespace Trello {
 
         type Visibility = 'shared' | 'private';
 
+        interface CardFromUrlOptions {
+            url: string;
+        }
+
+        interface FormatUrlOptions {
+            url: string;
+        }
+
+        interface FormatUrlResponse {
+            icon: string;
+            text: string;
+            subtext: string;
+            image: {
+                url: string;
+                size: "contain" | "original" | "cover";
+            }
+            actions: FormatUrlActions[];
+            thumbnail?: string; // Deprecated
+        }
+
+        interface FormatUrlActions {
+            text: string;
+            callback: (t: Trello.PowerUp.IFrame) => void;
+        }
+
+        interface CardFromUrlResponse {
+            name: string;
+            desc: string;
+        }
+
         interface PopupOptionsItem {
             text: string;
             callback?(t: any, options: any): PromiseLike<void>;
+        }
+
+        interface AuthorizationStatusResponse {
+            authorized: boolean;
+        }
+
+        interface AttachmentThumbnail {
+            title: string;
+            image: {
+                url: string;
+                logo: boolean;
+            }
+        }
+
+        interface AttachmentThumbnailOptions {
+            url: string;
         }
 
         interface PopupOptions {
@@ -327,6 +372,7 @@ export namespace Trello {
             initApi(): void;
             getRestApi(): unknown;
             initSentry(): void;
+            NotHandled: any;
         }
 
         interface PluginOptions extends LocalizerOptions {
@@ -392,18 +438,17 @@ export namespace Trello {
         }
 
         interface CardBadgeDynamic {
-            dynamic(): CardBadge;
+            dynamic(): CardBadge | Promise<CardBadge>;
         }
 
         interface CardDetailBadge extends CardBadge {
-            title: string;
             callback?(t: PowerUp.IFrame): void;
             url?: string;
             target?: string;
         }
 
         interface CardDetailBadgeDynamic {
-            dynamic(): CardDetailBadge;
+            dynamic(): CardDetailBadge | Promise<CardDetailBadge>;
         }
 
         interface ListAction {
@@ -443,7 +488,7 @@ export namespace Trello {
         }
 
         interface AttachmentSectionBase {
-            claimed: boolean;
+            claimed: Attachment[];
             icon: string;
             content: {
                 type: string;

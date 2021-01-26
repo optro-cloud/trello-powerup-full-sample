@@ -3,7 +3,7 @@ import * as ReactDOM from "react-dom";
 import PowerupRouter from "./router";
 
 ReactDOM.render(
-    <PowerupRouter />,
+    <PowerupRouter/>,
     document.getElementById("react-root")
 );
 
