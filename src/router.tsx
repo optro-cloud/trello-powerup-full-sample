@@ -7,20 +7,24 @@ const CardButton = React.lazy(() => import("./card-button/CardButton"));
 const BoardButton = React.lazy(() => import ("./board-button/BoardButton"));
 const ShowAuthorization = React.lazy(() => import("./show-authorization/ShowAuthorization"));
 const ShowSettings = React.lazy(() => import("./show-settings/ShowSettings"));
+const AttachmentSection = React.lazy(() => import("./attachment-sections/AttachmentSection"));
 
 function PowerupRouter() {
     return (
         <div>
             <Suspense fallback={<div style={{ margin: "6px" }}>Loading...</div>}>
                 <Router>
+                    <Route path="/attachment-section.html">
+                        <AttachmentSection />
+                    </Route>
+                    <Route path="/board-button.html">
+                        <BoardButton />
+                    </Route>
                     <Route path="/card-back-section.html">
                         <CardBackSection />
                     </Route>
                     <Route path="/card-button.html">
                         <CardButton />
-                    </Route>
-                    <Route path="/board-button.html">
-                        <BoardButton />
                     </Route>
                     <Route path="/show-authorization.html">
                         <ShowAuthorization />

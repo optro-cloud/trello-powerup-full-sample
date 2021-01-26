@@ -96,6 +96,16 @@ module.exports = (env) => {
                 chunks: ["addon"],
                 template: "templates/react.hbs",
                 favicon: "static/favicon.png",
+                filename: "attachment-section.html",
+                templateParameters: {
+                    powerup_name: process.env.POWERUP_NAME,
+                    powerup_app_key: process.env.POWERUP_APP_KEY
+                }
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ["addon"],
+                template: "templates/react.hbs",
+                favicon: "static/favicon.png",
                 filename: "card-button.html",
                 templateParameters: {
                     powerup_name: process.env.POWERUP_NAME,

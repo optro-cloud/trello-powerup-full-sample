@@ -1,6 +1,5 @@
 import {Trello} from "./types/trello";
 import {CapabilityProps} from "./types/power-up";
-
 import {getBoardButton} from "./board-button/capability";
 import {getCardButton} from "./card-button/capability";
 import {getCardBackSection} from "./card-back-section/capability";

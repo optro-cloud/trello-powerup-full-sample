@@ -1,5 +1,7 @@
 ## Trello Power-Up Template
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repository contains a feature-complete [Trello Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/your-first-power-up/) that can be used as a template for new Power-Ups! It implements a simple note-taking (To-Do App) application which allows you to add notes to Cards and then interact with these Cards across the interface.
 
 ### What capability examples are included?
