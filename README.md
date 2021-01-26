@@ -4,6 +4,8 @@
 
 This repository contains a feature-complete [Trello Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/your-first-power-up/) that can be used as a template for new Power-Ups! It implements a simple note-taking (To-Do App) application which allows you to add notes to Cards and then interact with these Cards across the interface.
 
+All available capabilities are implemented in TypeScript, with the UI provided by React Components. The project takes advantage of the Hot Reload technology provided by React and Webpack to make development a breeze!
+
 ### What capability examples are included?
 
 This template contains everything you need to get developing, hosting and monetizing your own Power-Up, with example extension points, such as:
