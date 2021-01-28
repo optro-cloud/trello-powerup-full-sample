@@ -13,4 +13,4 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Run ESLint
-        run: eslint .
+        run: npx eslint .
