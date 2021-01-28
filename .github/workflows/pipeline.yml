@@ -5,5 +5,8 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  - name: Run ESLint
-    run: eslint .
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ESLint
+        run: eslint .
