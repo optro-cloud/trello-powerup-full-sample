@@ -25,6 +25,9 @@
     "linebreak-style": ["error", "unix"]
   },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
