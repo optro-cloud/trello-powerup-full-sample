@@ -1,6 +1,11 @@
 ## Trello Power-Up Template
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/optro-cloud/trello-powerup-full-sample/Lint)
+![GitHub issues](https://img.shields.io/github/issues/optro-cloud/trello-powerup-full-sample)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![TypeScript](https://img.shields.io/badge/typescript-v4-orange)
+![React](https://img.shields.io/badge/react-v17-blue)
+![Webpack](https://img.shields.io/badge/webpack-v5-green)
 
 This repository contains a feature-complete [Trello Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/your-first-power-up/) that can be used as a template for new Power-Ups! It implements a simple note-taking (To-Do App) application which allows you to add notes to Cards and then interact with these Cards across the interface.
 
