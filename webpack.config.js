@@ -73,6 +73,7 @@ module.exports = (env) => {
                 "POWERUP_URL",
                 "POWERUP_ID",
                 "POWERUP_APP_KEY",
+                "CONTEXT_PATH",
                 "OPTRO_API_KEY"
             ]),
             new CopyWebpackPlugin({
