@@ -12,7 +12,6 @@ module.exports = (env) => {
     return ({
         output: {
             path: path.join(__dirname, "dist"),
-            publicPath: `${process.env.POWERUP_URL}/`,
             library: "react"
         },
         entry: {
