@@ -12,7 +12,7 @@ module.exports = (env) => {
     return ({
         output: {
             path: path.join(__dirname, "dist"),
-            publicPath: `${env.POWERUP_URL}/`,
+            publicPath: `${process.env.POWERUP_URL}/`,
             library: "react"
         },
         entry: {
@@ -71,6 +71,7 @@ module.exports = (env) => {
                 "NODE_ENV",
                 "PORT",
                 "POWERUP_NAME",
+                "POWERUP_URL",
                 "POWERUP_ID",
                 "POWERUP_APP_KEY",
                 "OPTRO_API_KEY"
