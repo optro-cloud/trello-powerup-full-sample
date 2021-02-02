@@ -9,6 +9,7 @@ jobs:
       NODE_ENV: development
       PORT: 3000
       POWERUP_NAME: My Power-Up
+      POWERUP_URL: https://optro-cloud.github.io/trello-powerup-full-sample
       CONTEXT_PATH: /trello-powerup-full-sample
       POWERUP_ID: 0a000000aa0aa00aaaaaaaa0
       POWERUP_APP_KEY: 00a00a0a0aa000000a0000000aa0aa0a
