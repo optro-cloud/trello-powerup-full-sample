@@ -8,11 +8,11 @@ jobs:
     env:
       NODE_ENV: development
       PORT: 3000
-      POWERUP_NAME: My Power-Up
-      POWERUP_URL: https://optro-cloud.github.io/trello-powerup-full-sample
-      CONTEXT_PATH: /trello-powerup-full-sample
-      POWERUP_ID: 0a000000aa0aa00aaaaaaaa0
-      POWERUP_APP_KEY: 00a00a0a0aa000000a0000000aa0aa0a
+      POWERUP_NAME: ${{ github.repository }}
+      POWERUP_URL: https://${{ github.repository_owner }}.github.io/${{ github.repository }}
+      CONTEXT_PATH: /${{ github.repository }}
+      POWERUP_ID: SUPPLY_POWERUP_ID_HERE
+      POWERUP_APP_KEY: SUPPLY_POWERUP_APP_KEY_HERE
       OPTRO_API_KEY: DISABLED
     steps:
       - name: Checkout Code
