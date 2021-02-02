@@ -8,7 +8,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     env:
-      NODE_ENV: production
+      NODE_ENV: development
       POWERUP_NAME: My Power-Up
       POWERUP_ID: 0a000000aa0aa00aaaaaaaa0
       POWERUP_APP_KEY: 00a00a0a0aa000000a0000000aa0aa0a
