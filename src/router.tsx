@@ -13,7 +13,7 @@ function PowerupRouter() {
     return (
         <div>
             <Suspense fallback={<div style={{ margin: "6px" }}>Loading...</div>}>
-                <Router>
+                <Router basename={process.env.CONTEXT_PATH || undefined}>
                     <Route path="/attachment-section.html">
                         <AttachmentSection />
                     </Route>
