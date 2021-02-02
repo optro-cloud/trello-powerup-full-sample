@@ -1,4 +1,4 @@
-## Trello Power-Up Template
+## Trello Power-Up Full Sample
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/optro-cloud/trello-powerup-full-sample/Lint)
 ![GitHub issues](https://img.shields.io/github/issues/optro-cloud/trello-powerup-full-sample)
@@ -10,6 +10,16 @@
 This repository contains a feature-complete [Trello Power-Up](https://developer.atlassian.com/cloud/trello/guides/power-ups/your-first-power-up/) that can be used as a template for new Power-Ups! It implements a simple note-taking (To-Do App) application which allows you to add notes to Cards and then interact with these Cards across the interface.
 
 All available capabilities are implemented in TypeScript, with the UI provided by React Components. The project takes advantage of the Hot Reload technology provided by React and Webpack to make development a breeze!
+
+### Try it now! (no download required)
+
+We've hosted the Power-Up on GitHub Pages so that you can try out the Power-Up without needing to download or install anything. Simply follow the instructions below to see what the sample offers:
+
+1. Create a new Power-Up at https://www.trello.com/power-ups/admin
+2. Paste the following URL in the 'Power-Up URL' field `https://optro-cloud.github.io/trello-powerup-full-sample/`
+3. Enable the Capabilities you'd like to try out on the 'Capabilities' tab
+4. Finally, navigate to a Trello Board and add the Power-Up from the 'Custom' tab
+5. You should see the Power-Up added to the Board and any functionality is active.
 
 ### What capability examples are included?
 
