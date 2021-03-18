@@ -1,11 +1,12 @@
-import {hot} from 'react-hot-loader/root';
 import * as React from 'react';
 import {useState} from 'react';
 import {CirclePicker} from 'react-color';
 import {createNote} from '../api/power-up';
+import {Trello} from '../types/trello';
 import './styles.css';
 
-const t = window.TrelloPowerUp.iframe();
+
+const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function CardButton() {
     const [color, setColor] = useState('#0079bf');
@@ -47,4 +48,4 @@ function CardButton() {
     );
 }
 
-export default hot(CardButton);
+export default CardButton;

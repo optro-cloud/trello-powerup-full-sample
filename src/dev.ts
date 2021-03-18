@@ -1,7 +1,8 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const ngrok = require('ngrok');
-const nodemon = require('nodemon');
+import * as dotenv from 'dotenv';
+import * as path from 'path';
+dotenv.config({path: path.join(__dirname, '..', '.env')});
+import * as ngrok from 'ngrok';
+import * as nodemon from 'nodemon';
 
 function getCurrentTime(): string {
     const now = new Date();

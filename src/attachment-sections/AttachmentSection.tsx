@@ -1,4 +1,3 @@
-import {hot} from "react-hot-loader/root";
 import React from "react";
 
 function AttachmentSection() {
@@ -7,4 +6,4 @@ function AttachmentSection() {
     )
 }
 
-export default hot(AttachmentSection);
+export default AttachmentSection;

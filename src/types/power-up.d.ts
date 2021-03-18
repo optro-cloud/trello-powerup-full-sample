@@ -1,4 +1,4 @@
-import {Trello} from "./trello";
+import {Trello} from './trello';
 
 export interface Note {
     color: string;

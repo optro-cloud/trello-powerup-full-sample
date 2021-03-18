@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root';
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {getBoardNotes, removeNote} from '../api/power-up';
@@ -6,9 +5,10 @@ import {NoteWithCard} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
+import {Trello} from '../types/trello';
 import '../styles/card.css';
 
-const t = window.TrelloPowerUp.iframe();
+const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function BoardButton() {
     const [items, setItems] = useState<NoteWithCard[] | null>(null);
@@ -63,4 +63,4 @@ function BoardButton() {
     );
 }
 
-export default hot(BoardButton);
+export default BoardButton;

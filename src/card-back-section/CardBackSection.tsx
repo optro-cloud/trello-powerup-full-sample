@@ -1,4 +1,3 @@
-import {hot} from 'react-hot-loader/root';
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {Note} from '../types/power-up';
@@ -6,10 +5,11 @@ import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
 import {getCardNotes, removeNote} from '../api/power-up';
+import {Trello} from '../types/trello';
 import '../styles/card.css';
 import '../styles/lottie.css';
 
-const t = window.TrelloPowerUp.iframe();
+const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function CardBackSection() {
     const [items, setItems] = useState<Note[] | null>(null);
@@ -22,10 +22,9 @@ function CardBackSection() {
 
     useEffect(() => {
         // Load the Notes List when the Component is rendered
-        refresh().then(() => {
-            // Refresh the Notes List when Trello signals that a change has happened
-            t.render(async () => { return refresh(); });
-        });
+        refresh();
+        // Refresh the Notes List when Trello signals that a change has happened
+        t.render(async () => { return refresh(); });
     }, []);
 
     return (
@@ -62,4 +61,4 @@ function CardBackSection() {
     );
 }
 
-export default hot(CardBackSection);
+export default CardBackSection;

@@ -6,7 +6,3 @@ ReactDOM.render(
     <PowerupRouter/>,
     document.getElementById('react-root')
 );
-
-if (module.hot) {
-    module.hot.accept();
-}

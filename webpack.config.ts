@@ -2,6 +2,7 @@ require('dotenv').config({path: `${__dirname}/.env`});
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -15,8 +16,8 @@ module.exports = (env: any) => {
             library: 'react'
         },
         entry: {
-            capabilities: ['react-hot-loader/patch', path.join(path.resolve(__dirname, 'src'), 'capabilities.ts')],
-            addon: ['react-hot-loader/patch', path.join(path.resolve(__dirname, 'src'), 'addon.tsx')]
+            capabilities: path.join(path.resolve(__dirname, 'src'), 'capabilities.ts'),
+            addon: path.join(path.resolve(__dirname, 'src'), 'addon.tsx')
         },
         module: {
             rules: [
@@ -36,7 +37,9 @@ module.exports = (env: any) => {
                         // It enables caching results in ./node_modules/.cache/babel-loader/
                         // directory for faster rebuilds.
                         cacheDirectory: true,
-                        plugins: ['react-hot-loader/babel'],
+                        plugins: [
+                            dev && require.resolve('react-refresh/babel'),
+                        ].filter(Boolean),
                     },
                 },
                 {
@@ -151,9 +154,11 @@ module.exports = (env: any) => {
                     powerup_name: process.env.POWERUP_NAME,
                     powerup_app_key: process.env.POWERUP_APP_KEY
                 }
-            })
-        ],
-        optimization: !env.WEBPACK_BUILD ? {} : {
+            }),
+            !env.WEBPACK_BUILD && new webpack.HotModuleReplacementPlugin(),
+            !env.WEBPACK_BUILD && new ReactRefreshWebpackPlugin(),
+        ].filter(Boolean),
+        optimization: !env.WEBPACK_BUILD ? {
             minimize: true,
             usedExports: 'global',
             splitChunks: {
@@ -176,10 +181,9 @@ module.exports = (env: any) => {
                     }
                 }
             }
-        },
+        } : undefined,
         resolve: {
-            extensions: ['.ts', '.tsx', '.js', '.css'],
-            alias: {'react-dom': '@hot-loader/react-dom'}
+            extensions: ['.ts', '.tsx', '.js', '.css']
         },
         devServer: !env.WEBPACK_BUILD ? {
             contentBase: path.join(__dirname, 'dist'),

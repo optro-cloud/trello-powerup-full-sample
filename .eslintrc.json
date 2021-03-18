@@ -9,6 +9,7 @@
   "rules": {
     "no-console": "off",
     "no-global-assign": "off",
+    "no-restricted-globals": "off",
     "indent": ["warn", 4],
     "import/extensions": [
       "off",

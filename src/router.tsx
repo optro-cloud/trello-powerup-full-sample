@@ -1,5 +1,4 @@
 // @ts-ignore
-import { hot } from 'react-hot-loader';
 import React, { Suspense } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
@@ -39,4 +38,4 @@ function PowerupRouter() {
     );
 }
 
-export default hot(PowerupRouter);
+export default PowerupRouter;
