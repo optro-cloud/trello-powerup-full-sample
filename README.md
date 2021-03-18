@@ -73,13 +73,14 @@ Find out how the project is structured and what the files do!
  * `src/`
  	* `capabilities.ts` - This is the Power-Up descriptor and describes which capabilities are implemented - e.g. Card Buttons. Any UI elements that are rendered by Trello itself are contained in this file.
  	* `router.ts` - This file contains the React-Router code, which is used to render the correct React components for their corresponding URL's.
+	* `server.ts` - A basic script to serve the pages using Node.js (not recommended, as you can use the static files in /dist to save overhead/money)
+	* `dev.ts` - A script that runs a self-contained development environment.
  	*  `api/` - Contains any abstracted API functions that are used by the App (e.g. openPopup, getNotesForCard).
  	* `<capability>/` - Each capability that includes a React Front-End has it's own folder to store it's components and styles.
  	* `types/` - Contains Typings for the Power-Up and for Trello.
  * `static/` - Contains static files that should be included in the Power-Up distribution (e.g. Favicon)
  * `templates/` - Contains handlebars templates that are used by Webpack to build matching *.html files for each extension point.
  * `.env.example` - An example environmental variables file that can be used during development (make a copy of this file, name it `.env` and modify it according to your requirements.
- * `server.ts` - A basic script to serve the pages using Node.js (not recommended, as you can use the static files in /dist to save overhead/money)
  * `package.json` - This file describes the dependencies used by the Power-Up, basic information and scripts.
  * `webpack.config.ts` - The Webpack file describes 'how the Power-Up should be compiled' and handles transpiling, file generation and also contains the configuration for running the Webpack Dev Server.
 
