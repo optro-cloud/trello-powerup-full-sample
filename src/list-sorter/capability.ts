@@ -1,10 +1,10 @@
-import {CapabilityProps, Note} from "../types/power-up";
-import {Trello} from "../types/trello";
+import {CapabilityProps, Note} from '../types/power-up';
+import {Trello} from '../types/trello';
 
 async function sortList(t: Trello.PowerUp.IFrame, opts: any, order: "asc" | "desc"): Promise<{ sortedIds: string[] }> {
     const map: any = {};
     for (const card of opts.cards) {
-        const notes: Note[] = JSON.parse(await t.get(card.id, "shared", "notes", "[]"));
+        const notes: Note[] = JSON.parse(await t.get(card.id, 'shared', 'notes', '[]'));
         map[card.id] = notes.length;
     }
     const sortedCards = opts.cards.sort(
@@ -13,21 +13,21 @@ async function sortList(t: Trello.PowerUp.IFrame, opts: any, order: "asc" | "des
         (c: any) => c.id
     );
 
-    return {sortedIds: order === "desc" ? sortedCards : sortedCards.reverse()};
+    return {sortedIds: order === 'desc' ? sortedCards : sortedCards.reverse()};
 }
 
 export function getListSorter(_t: Trello.PowerUp.IFrame, _props: CapabilityProps): Trello.PowerUp.ListSorter[] {
     return [
         {
-            text: "Notes (Ascending)",
+            text: 'Notes (Ascending)',
             callback: async (tc: Trello.PowerUp.IFrame, opts: any) => {
-                return sortList(tc, opts, "asc");
+                return sortList(tc, opts, 'asc');
             }
         },
         {
-            text: "Notes (Descending)",
+            text: 'Notes (Descending)',
             callback: async (tc: Trello.PowerUp.IFrame, opts: any) => {
-                return sortList(tc, opts, "desc");
+                return sortList(tc, opts, 'desc');
             }
         }
     ];

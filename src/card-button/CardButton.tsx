@@ -1,15 +1,15 @@
-import {hot} from "react-hot-loader/root";
-import * as React from "react";
-import {useState} from "react";
-import {CirclePicker} from "react-color";
-import {createNote} from "../api/power-up";
-import "./styles.css";
+import {hot} from 'react-hot-loader/root';
+import * as React from 'react';
+import {useState} from 'react';
+import {CirclePicker} from 'react-color';
+import {createNote} from '../api/power-up';
+import './styles.css';
 
 const t = window.TrelloPowerUp.iframe();
 
 function CardButton() {
-    const [color, setColor] = useState("#0079bf");
-    const [note, setNote] = useState("");
+    const [color, setColor] = useState('#0079bf');
+    const [note, setNote] = useState('');
 
     return (
         <div id="container">
@@ -19,7 +19,7 @@ function CardButton() {
                 <CirclePicker
                     color={color}
                     onChange={(col: any) => setColor(col.hex)}
-                    colors={["#0079bf", "#70b500", "#ff9f1a", "#eb5a46", "#f2d600", "#c377e0"]}
+                    colors={['#0079bf', '#70b500', '#ff9f1a', '#eb5a46', '#f2d600', '#c377e0']}
                 />
             </div>
             <label htmlFor="note">Note (Markdown)</label>
@@ -37,9 +37,9 @@ function CardButton() {
             </p>
             <button
                 disabled={note.length === 0}
-                title={note.length === 0 ? "Enter a note first" : "Create Note"}
+                title={note.length === 0 ? 'Enter a note first' : 'Create Note'}
                 className="mod-primary"
-                onClick={() => { createNote(t, {color: color, text: note}, true); }}
+                onClick={() => { return createNote(t, {color: color, text: note}, true); }}
             >
                 Create
             </button>

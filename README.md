@@ -79,8 +79,9 @@ Find out how the project is structured and what the files do!
  * `static/` - Contains static files that should be included in the Power-Up distribution (e.g. Favicon)
  * `templates/` - Contains handlebars templates that are used by Webpack to build matching *.html files for each extension point.
  * `.env.example` - An example environmental variables file that can be used during development (make a copy of this file, name it `.env` and modify it according to your requirements.
+ * `server.ts` - A basic script to serve the pages using Node.js (not recommended, as you can use the static files in /dist to save overhead/money)
  * `package.json` - This file describes the dependencies used by the Power-Up, basic information and scripts.
- * `webpack.config.js` - The Webpack file describes 'how the Power-Up should be compiled' and handles transpiling, file generation and also contains the configuration for running the Webpack Dev Server.
+ * `webpack.config.ts` - The Webpack file describes 'how the Power-Up should be compiled' and handles transpiling, file generation and also contains the configuration for running the Webpack Dev Server.
 
 ### Running in Production
 

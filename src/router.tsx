@@ -1,18 +1,19 @@
-import React, { Suspense } from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import { hot } from "react-hot-loader/root";
+// @ts-ignore
+import { hot } from 'react-hot-loader';
+import React, { Suspense } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-const CardBackSection = React.lazy(() => import("./card-back-section/CardBackSection"));
-const CardButton = React.lazy(() => import("./card-button/CardButton"));
-const BoardButton = React.lazy(() => import ("./board-button/BoardButton"));
-const ShowAuthorization = React.lazy(() => import("./show-authorization/ShowAuthorization"));
-const ShowSettings = React.lazy(() => import("./show-settings/ShowSettings"));
-const AttachmentSection = React.lazy(() => import("./attachment-sections/AttachmentSection"));
+const CardBackSection = React.lazy(() => import('./card-back-section/CardBackSection'));
+const CardButton = React.lazy(() => import('./card-button/CardButton'));
+const BoardButton = React.lazy(() => import ('./board-button/BoardButton'));
+const ShowAuthorization = React.lazy(() => import('./show-authorization/ShowAuthorization'));
+const ShowSettings = React.lazy(() => import('./show-settings/ShowSettings'));
+const AttachmentSection = React.lazy(() => import('./attachment-sections/AttachmentSection'));
 
 function PowerupRouter() {
     return (
         <div>
-            <Suspense fallback={<div style={{ margin: "6px" }}>Loading...</div>}>
+            <Suspense fallback={<div style={{ margin: '6px' }}>Loading...</div>}>
                 <Router basename={process.env.CONTEXT_PATH || undefined}>
                     <Route path="/attachment-section.html">
                         <AttachmentSection />

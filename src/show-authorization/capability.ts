@@ -1,5 +1,5 @@
-import {CapabilityProps} from "../types/power-up";
-import {Trello} from "../types/trello";
+import {CapabilityProps} from '../types/power-up';
+import {Trello} from '../types/trello';
 
 export function getShowAuthorization(t: Trello.PowerUp.IFrame, _props: CapabilityProps) {
     return t.popup({

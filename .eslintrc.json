@@ -8,6 +8,7 @@
   },
   "rules": {
     "no-console": "off",
+    "no-global-assign": "off",
     "indent": ["warn", 4],
     "import/extensions": [
       "off",
@@ -19,10 +20,9 @@
         "tsx": "never"
       }
     ],
-    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "quotes": ["warn", "single", { "avoidEscape": true }],
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off",
-    "linebreak-style": ["error", "unix"]
+    "react/jsx-filename-extension": "off"
   },
   "settings": {
     "react": {
