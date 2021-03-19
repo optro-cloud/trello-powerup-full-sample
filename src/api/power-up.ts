@@ -30,7 +30,7 @@ export async function removeNote(t: Trello.PowerUp.IFrame, index: number, cardId
     return t.set(cardId || 'card', 'shared', 'notes', JSON.stringify(notes));
 }
 
-export async function removeAllNotes(t: Trello.PowerUp.IFrame, scope: "shared" | "private"): Promise<void> {
+export async function removeAllNotes(t: Trello.PowerUp.IFrame, scope: 'shared' | 'private'): Promise<void> {
     const cards: Trello.PowerUp.Card[] = await t.cards('all');
     for (const card of cards) {
         await t.set(card.id, scope, 'notes', '[]');

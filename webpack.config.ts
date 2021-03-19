@@ -30,7 +30,7 @@ module.exports = (env: any) => {
                     loader: 'babel-loader',
                     exclude: [
                         /(node_modules)/,
-                        path.join(path.resolve(__dirname, 'src'), 'dev.ts')
+                        path.join(path.resolve(__dirname, 'src'), 'dev-watch.ts')
                     ],
                     options: {
                         // This is a feature of `babel-loader` for Webpack (not Babel itself).

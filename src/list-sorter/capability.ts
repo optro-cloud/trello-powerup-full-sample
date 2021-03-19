@@ -1,7 +1,7 @@
 import {CapabilityProps, Note} from '../types/power-up';
 import {Trello} from '../types/trello';
 
-async function sortList(t: Trello.PowerUp.IFrame, opts: any, order: "asc" | "desc"): Promise<{ sortedIds: string[] }> {
+async function sortList(t: Trello.PowerUp.IFrame, opts: any, order: 'asc' | 'desc'): Promise<{ sortedIds: string[] }> {
     const map: any = {};
     for (const card of opts.cards) {
         const notes: Note[] = JSON.parse(await t.get(card.id, 'shared', 'notes', '[]'));

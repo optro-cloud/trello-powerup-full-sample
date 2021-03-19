@@ -34,7 +34,7 @@ ngrok.connect({port: process.env.PORT || 3000}).then((tunnelUrl: string) => {
     // Use nodemon to watch for changes to the server-side code
     nodemon({
         exec: `node_modules/.bin/webpack serve --config webpack.config.ts --env POWERUP_URL=${tunnelUrl} --mode=development`,
-        ignore: ['src/**/*.spec.ts', 'dev.ts']
+        ignore: ['src/**/*.spec.ts', 'dev-watch.ts']
     });
 
     // Stop ngrok on kill

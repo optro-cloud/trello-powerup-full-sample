@@ -100,7 +100,7 @@ export namespace Trello {
             subtext: string;
             image: {
                 url: string;
-                size: "contain" | "original" | "cover";
+                size: 'contain' | 'original' | 'cover';
             }
             actions: FormatUrlActions[];
             thumbnail?: string; // Deprecated
@@ -351,14 +351,12 @@ export namespace Trello {
             }): PromiseLike<void>;
         }
 
-        // eslint-disable-next-line @typescript-eslint/interface-name-prefix
         interface IFrameOptions extends LocalizerOptions {
             context?: string;
             secret?: string;
             helpfulStacks?: boolean;
         }
 
-        // eslint-disable-next-line @typescript-eslint/interface-name-prefix
         interface IFrame extends HostHandlers {
             io: any | null;
             args: any[];
@@ -578,7 +576,7 @@ export namespace Trello {
             url: string; // https://trello.com/c/I5nAdteE/9-test
             shortLink: string;
             members: Member[];
-            dateLastActivity: string; // "2019-11-28T15:53:19.709Z"
+            dateLastActivity: string; // '2019-11-28T15:53:19.709Z'
             idOrganization: string;
             customFields: CustomField[];
             labels: Label[];
@@ -593,9 +591,9 @@ export namespace Trello {
             coordinates: Coordinates | null;
             cover: Attachment | null;
             customFieldItems: CustomField[];
-            dateLastActivity: string; // "2019-11-28T15:53:19.709Z"
+            dateLastActivity: string; // '2019-11-28T15:53:19.709Z'
             desc: string;
-            due: string | null; // "2019-11-28T15:53:19.709Z"
+            due: string | null; // '2019-11-28T15:53:19.709Z'
             dueComplete: boolean;
             id: string;
             idList: string;

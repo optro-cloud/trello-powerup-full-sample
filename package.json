@@ -7,9 +7,13 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.ts --mode=production",
-    "watch": "ts-node src/dev.ts",
-    "serve": "ts-node src/server.ts",
-    "clean": "rimraf dist && rimraf node_modules"
+    "build:dev": "webpack --config webpack.config.ts --mode=development --watch",
+    "clean": "rimraf dist && rimraf node_modules",
+    "lint": "eslint src/**/*.{js,ts,tsx}",
+    "lint:fix": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
+    "start": "ts-node src/server.ts",
+    "start:dev": "ts-node src/dev-server.ts",
+    "watch": "ts-node src/dev-watch.ts"
   },
   "dependencies": {
     "@optro/api-client": "latest",
