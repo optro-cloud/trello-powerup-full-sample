@@ -1,23 +1,29 @@
 require('dotenv').config({path: `${__dirname}/.env`});
 const webpack = require('webpack');
 const path = require('path');
+import * as fs from 'fs';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const dev = process.env.NODE_ENV !== 'production';
-// const appDirectory: any = fs.realpathSync(process.cwd());
+// Uncomment if you'd like to analyze the Webpack Bundles
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath: string) => path.resolve(appDirectory, relativePath);
 
 module.exports = (env: any) => {
     return ({
         output: {
-            path: path.join(__dirname, 'dist'),
-            library: 'react'
+            path: resolveApp('dist'),
+            filename: 'powerup-[name]-[contenthash].js',
+            library: 'react',
+            clean: true
         },
         entry: {
-            capabilities: path.join(path.resolve(__dirname, 'src'), 'capabilities.ts'),
-            addon: path.join(path.resolve(__dirname, 'src'), 'addon.tsx')
+            capabilities: resolveApp(path.join('src', 'capabilities.ts')),
+            addon: resolveApp(path.join('src', 'addon.tsx'))
         },
         module: {
             rules: [
