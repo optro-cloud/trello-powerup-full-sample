@@ -1,1 +1,0 @@
-(self.webpackChunkreact=self.webpackChunkreact||[]).push([[826],{8651:(e,t,n)=>{"use strict";n.r(t),n.d(t,{default:()=>s});var c=n(7294);function a(){return c.createElement("p",null,"This is an attachment section!")}const s=a;$RefreshReg$(a,"AttachmentSection")}}]);
