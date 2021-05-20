@@ -40,9 +40,6 @@ function BoardButton() {
                                 <a href="#" onClick={() => { return t.showCard(item.card.id); }}>{item.card.name}</a>
                             </div>
                         </div>
-                        <div className="card-delete-button-container">
-                            <button onClick={() => removeNote(t, index, item.card.id)}>Remove</button>
-                        </div>
                     </div>
                 ))}
                 {items !== null && items.length === 0 && (
