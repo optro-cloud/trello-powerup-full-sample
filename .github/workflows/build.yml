@@ -14,6 +14,7 @@ jobs:
       POWERUP_ID: UNSPECIFIED
       POWERUP_APP_KEY: UNSPECIFIED
       OPTRO_API_KEY: DISABLED
+      OPTRO_LICENSE_TYPE: UNSPECIFIED
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
