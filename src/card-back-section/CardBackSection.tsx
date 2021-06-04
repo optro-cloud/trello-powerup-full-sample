@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
+import {useProvidedTrello} from "@optro/ui-react";
 import {Note} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
@@ -7,7 +8,6 @@ import emptyAnimation from '../styles/lottie-empty.json';
 import {getCardNotes, removeNote} from '../api/power-up';
 import '../styles/card.css';
 import '../styles/lottie.css';
-import {useProvidedTrello} from "@optro/ui-react";
 
 function CardBackSection() {
     const t = useProvidedTrello();
