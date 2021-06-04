@@ -1,13 +1,12 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
+import {useProvidedTrello} from "@optro/ui-react";
 import {getBoardNotes} from '../api/power-up';
 import {NoteWithCard} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
 import '../styles/card.css';
-import {useProvidedTrello} from "@optro/ui-react";
-
 
 function BoardButton() {
     const t = useProvidedTrello();
