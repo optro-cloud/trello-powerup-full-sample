@@ -5,7 +5,6 @@ import {createNote} from '../api/power-up';
 import {Trello} from '../types/trello';
 import './styles.css';
 
-
 const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function CardButton() {

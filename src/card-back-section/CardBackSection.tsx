@@ -17,7 +17,11 @@ function CardBackSection() {
     const refresh = async () => {
         let notes: Note[] = await getCardNotes(t);
         setItems(notes)
-        await t.sizeTo('#react-root');
+        if(notes.length === 0) {
+            await t.sizeTo(300);
+        } else {
+            await t.sizeTo('#react-root');
+        }
     }
 
     useEffect(() => {
@@ -48,6 +52,7 @@ function CardBackSection() {
                         <Lottie
                             className="lottie-empty-state"
                             loop={false}
+                            height={200}
                             animationData={emptyAnimation}
                         />
                         <div className="lottie-empty-state-label">

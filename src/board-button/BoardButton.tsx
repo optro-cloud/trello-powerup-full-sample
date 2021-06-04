@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
-import {getBoardNotes, removeNote} from '../api/power-up';
+import {getBoardNotes} from '../api/power-up';
 import {NoteWithCard} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
 import {Trello} from '../types/trello';
 import '../styles/card.css';
+import '../styles/lottie.css';
 
 const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
@@ -16,6 +17,11 @@ function BoardButton() {
     const refresh = async () => {
         const notes: NoteWithCard[] = await getBoardNotes(t);
         setItems(notes);
+        if(notes.length === 0) {
+            await t.sizeTo(300);
+        } else {
+            await t.sizeTo('#react-root');
+        }
     }
 
     useEffect(() => {
@@ -47,6 +53,7 @@ function BoardButton() {
                         <Lottie
                             className="lottie-empty-state"
                             loop={false}
+                            height={200}
                             animationData={emptyAnimation}
                         />
                         <div className="lottie-empty-state-label">
