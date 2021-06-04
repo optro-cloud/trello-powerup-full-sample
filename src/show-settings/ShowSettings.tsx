@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {removeAllNotes} from '../api/power-up';
-import {Trello} from '../types/trello';
 import './styles.css';
+import {useProvidedTrello} from "@optro/ui-react";
 
-const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function ShowSettings() {
+    const t = useProvidedTrello();
     return (
         <div className="inner-settings-panel">
             <p>Configure the Notes Power-Up.</p>

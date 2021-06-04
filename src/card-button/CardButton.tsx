@@ -1,14 +1,12 @@
 import * as React from 'react';
 import {useState} from 'react';
+import {useProvidedTrello} from "@optro/ui-react";
 import {CirclePicker} from 'react-color';
 import {createNote} from '../api/power-up';
-import {Trello} from '../types/trello';
 import './styles.css';
 
-
-const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
-
 function CardButton() {
+    const t = useProvidedTrello();
     const [color, setColor] = useState('#0079bf');
     const [note, setNote] = useState('');
 
@@ -16,6 +14,9 @@ function CardButton() {
         <div id="container">
             <p>Add a new note to the card.</p>
             <label htmlFor="color">Color</label>
+            {
+                // Colour picker for the note colour
+            }
             <div className="color-picker-container">
                 <CirclePicker
                     color={color}

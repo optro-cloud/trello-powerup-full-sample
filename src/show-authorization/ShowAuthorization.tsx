@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {getAuth, setAuth} from '../api/power-up';
-import {Trello} from '../types/trello';
 import '../styles/card.css';
-
-const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
+import {useProvidedTrello} from "@optro/ui-react";
 
 function BoardButton() {
+    const t = useProvidedTrello();
     const [authStatus, setAuthStatus] = useState<boolean | null>(null);
 
     const refresh = async () => {
