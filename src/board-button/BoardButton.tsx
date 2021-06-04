@@ -1,16 +1,16 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
-import {getBoardNotes, removeNote} from '../api/power-up';
+import {getBoardNotes} from '../api/power-up';
 import {NoteWithCard} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
-import {Trello} from '../types/trello';
 import '../styles/card.css';
+import {useProvidedTrello} from "@optro/ui-react";
 
-const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
 
 function BoardButton() {
+    const t = useProvidedTrello();
     const [items, setItems] = useState<NoteWithCard[] | null>(null);
 
     const refresh = async () => {

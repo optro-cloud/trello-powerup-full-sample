@@ -5,13 +5,12 @@ import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';
 import emptyAnimation from '../styles/lottie-empty.json';
 import {getCardNotes, removeNote} from '../api/power-up';
-import {Trello} from '../types/trello';
 import '../styles/card.css';
 import '../styles/lottie.css';
-
-const t: Trello.PowerUp.IFrame = window.TrelloPowerUp.iframe();
+import {useProvidedTrello} from "@optro/ui-react";
 
 function CardBackSection() {
+    const t = useProvidedTrello();
     const [items, setItems] = useState<Note[] | null>(null);
 
     const refresh = async () => {
