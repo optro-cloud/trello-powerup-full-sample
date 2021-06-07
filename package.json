@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@optro/api-client": "^1.0.1",
-    "@optro/ui-react": "^1.0.3",
+    "@optro/ui-react": "^1.0.4",
     "core-js": "^3.9.1",
     "lottie-react": "^2.1.0",
     "react": "^17.0.1",
