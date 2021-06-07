@@ -1,6 +1,5 @@
-import * as React from 'react';
-import {useEffect, useState} from 'react';
-import {useProvidedTrello} from "@optro/ui-react";
+import React, {useEffect, useState} from 'react';
+import {useProvidedTrello} from '@optro/ui-react';
 import {Note} from '../types/power-up';
 import ReactMarkdown from 'react-markdown';
 import Lottie from 'lottie-react';

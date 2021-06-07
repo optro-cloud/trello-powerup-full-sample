@@ -1,6 +1,5 @@
-import * as React from 'react';
-import {useState} from 'react';
-import {useProvidedTrello} from "@optro/ui-react";
+import React, {useState} from 'react';
+import {useProvidedTrello} from '@optro/ui-react';
 import {CirclePicker} from 'react-color';
 import {createNote} from '../api/power-up';
 import './styles.css';

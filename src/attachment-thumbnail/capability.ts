@@ -1,12 +1,12 @@
 import {CapabilityProps} from '../types/power-up';
 import {Trello} from '../types/trello';
-import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
+import {uniqueNamesGenerator, adjectives, colors, animals} from 'unique-names-generator';
 
 function formatUrl(_t: Trello.PowerUp.IFrame, url: string) {
     if (!/^https?:\/\/www\.appfox\.io\/[a-z]{4}\//.test(url)) {
         return null;
     }
-    var match: RegExpExecArray | null = /^https?:\/\/www\.appfox\.io\/([a-z]{4})\//.exec(url);
+    const match: RegExpExecArray | null = /^https?:\/\/www\.appfox\.io\/([a-z]{4})\//.exec(url);
     if(match && match.length > 0) {
         return uniqueNamesGenerator({
             dictionaries: [adjectives, colors, animals]
@@ -17,7 +17,7 @@ function formatUrl(_t: Trello.PowerUp.IFrame, url: string) {
 }
 
 export function getAttachmentThumbnail(t: Trello.PowerUp.IFrame, options: Trello.PowerUp.AttachmentThumbnailOptions, _props: CapabilityProps) {
-    var parkName = formatUrl(t, options.url);
+    const parkName = formatUrl(t, options.url);
     if (parkName){
         // return an object with some or all of these properties:
         // title, image, modified (Date), created (Date), createdBy, modifiedBy

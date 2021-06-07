@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import React, {Suspense} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import { TrelloProvider } from '@optro/ui-react';
+import {TrelloProvider} from '@optro/ui-react';
 
 const CardBackSection = React.lazy(() => import('./card-back-section/CardBackSection'));
 const CardButton = React.lazy(() => import('./card-button/CardButton'));

@@ -1,6 +1,5 @@
-import * as React from 'react';
-import {useProvidedTrello} from "@optro/ui-react";
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {useProvidedTrello} from '@optro/ui-react';
 import {getAuth, setAuth} from '../api/power-up';
 import '../styles/card.css';
 

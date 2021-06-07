@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import {removeAllNotes} from '../api/power-up';
+import {useProvidedTrello} from '@optro/ui-react';
 import './styles.css';
-import {useProvidedTrello} from "@optro/ui-react";
-
 
 function ShowSettings() {
     const t = useProvidedTrello();
