@@ -16,7 +16,7 @@
     "watch": "ts-node src/dev-watch.ts"
   },
   "dependencies": {
-    "@optro/ui-react": "^1.0.4",
+    "@optro/ui-react": "^1.0.27",
     "core-js": "^3.9.1",
     "lottie-react": "^2.1.0",
     "react": "^17.0.1",
