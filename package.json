@@ -1,6 +1,6 @@
 {
   "name": "trello-powerup-full-sample",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "This package provides a ready-made Trello Power-Up that can be used to build new Power-Ups. It is used by the create-trello-powerup package to generate user-defined Power-Ups automatically.",
   "main": "index.js",
   "author": "Optro",
@@ -16,7 +16,7 @@
     "watch": "ts-node src/dev-watch.ts"
   },
   "dependencies": {
-    "@optro/ui-react": "^1.0.4",
+    "@optro/ui-react": "^1.0.27",
     "core-js": "^3.9.1",
     "lottie-react": "^2.1.0",
     "react": "^17.0.1",
@@ -62,11 +62,11 @@
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.3.9",
     "ngrok": "^3.4.1",
-    "node-sass": "^5.0.0",
     "node-static": "^0.7.11",
     "nodemon": "^2.0.7",
     "react-refresh": "^0.9.0",
     "rimraf": "^3.0.2",
+    "sass": "^1.36.0",
     "sass-loader": "^11.0.1",
     "source-map-loader": "^2.0.1",
     "style-loader": "^2.0.0",
