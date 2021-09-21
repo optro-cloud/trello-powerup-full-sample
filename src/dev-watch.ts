@@ -17,6 +17,7 @@ function validateEnvSetup() {
     for(const env of requiredEnv) {
         if(!actualEnv.includes(env)) {
             console.error('You are missing Environmental Variables! Make sure you create a .env file. Exiting.');
+            console.error('To retry, navigate to the Power-Up root directory and run `yarn watch`.');
             process.exit(1);
         }
     }
@@ -29,7 +30,7 @@ console.log(`⏰ ${getCurrentTime()} Creating a tunnel with ngrok for localhost:
 ngrok.connect({port: process.env.PORT || 3000}).then((tunnelUrl: string) => {
     console.log(`✔ ${getCurrentTime()} ${process.env.POWERUP_NAME} tunnel created via ${tunnelUrl}`);
     const managementUrl = process.env.POWERUP_ID === 'UNSPECIFIED' ? 'https://trello.com/power-ups/admin' : `https://trello.com/power-ups/${process.env.POWERUP_ID}/edit`;
-    console.log(`⚠ ${getCurrentTime()} Don't forget to update your Power-up URL at ${managementUrl}`);
+    console.log(`⚠ ${getCurrentTime()} Don't forget to update your iFrame Connector URL at ${managementUrl}`);
 
     // Use nodemon to watch for changes to the server-side code
     nodemon({
@@ -43,5 +44,6 @@ ngrok.connect({port: process.env.PORT || 3000}).then((tunnelUrl: string) => {
         await ngrok.kill();
     }).on('unhandledRejection', (error: any) => {
         console.log(`⚠ ${getCurrentTime()} Unhandled Exception`, error);
+        console.log('To retry, navigate to the Power-Up root directory and run `yarn watch`.');
     });
 });
