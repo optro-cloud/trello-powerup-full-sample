@@ -21,6 +21,16 @@ We've hosted the Power-Up on GitHub Pages so that you can try out the Power-Up w
 4. Finally, navigate to a Trello Board and add the Power-Up from the 'Custom' tab
 5. You should see the Power-Up added to the Board and any functionality is active.
 
+### Customize it
+
+Create a custom build of this sample using our [Generator](https://github.com/optro-cloud/create-trello-powerup).
+
+It's as easy as running ```npx @optro/create-trello-powerup@latest``` in your command line and following the on screen instructions.
+
+The generator allows you to select which features to enable and has integrated support for monetization with [Optro](https://www.optro.cloud/about) using [Optro vendor](https://vendor.optro.cloud/)
+
+**To get started with the generator you can follow our [step-by-step walkthrough](https://docs.appfox.io/optro-vendor/Use-the-Power-Up-Generator.150732928.html).**
+
 ### What capability examples are included?
 
 This template contains everything you need to get developing, hosting and monetizing your own Power-Up, with example extension points, such as:
@@ -65,6 +75,13 @@ If you'd like to use the template directly without the genereator, please follow
 6. You will be provided a URL endpoint like https://a0d9081f2351.ngrok.io/ - this should be pasted in the 'Iframe Connector URL' field on the Power-Up configuration page.
 7. Open a Trello Board and add the Power-Up you created in Step 1 from the 'Custom' section.
 8. You now have a Power-Up running and should see any changes you make to the React front-end are automatically reflected in the browser!
+
+### How can I monetize my Power-Up?
+
+To monetize your Power-Up we recommend the [Optro Vendor](https://vendor.optro.cloud) platform.
+To get started you can follow this [easy to follow guide](https://docs.appfox.io/optro-vendor/Monetize-your-Trello-Power-Ups.153878549.html).
+
+The [Optro vendor]() platform allows you to publish your Power-Ups to the [Optro]() marketplace which makes it easy for your users to subscribe and to manage their subscriptions.
 
 ### Project Structure
 
@@ -114,13 +131,6 @@ There are too many ways to fully describe the options here, but the following re
 * Azure - [Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app)
 * Google Cloud (GCP) - [Cloud Run](https://cloud.google.com/run/docs/deploying)
 * Heroku - [Using the Heroku Container Registry](https://devcenter.heroku.com/articles/container-registry-and-runtime) or [Use heroku.yml to automate build/deployment](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
-
-### Coming Soon...
-
-The following features are coming soon:
-
-* Trello Power-Up Generator - This npm package will enable you to make new Trello Power-Ups by answering simple questions on the command line.
-* Monetization Support - We will be expanding this template project to include monetization support by using the [Optro Marketplace platform](https://www.optro.cloud).
 
 ### Where can I get assistance?
 
