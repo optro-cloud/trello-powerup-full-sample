@@ -81,7 +81,7 @@ If you'd like to use the template directly without the genereator, please follow
 To monetize your Power-Up we recommend the [Optro Vendor](https://vendor.optro.cloud) platform.
 To get started you can follow this [easy to follow guide](https://docs.appfox.io/optro-vendor/Monetize-your-Trello-Power-Ups.153878549.html).
 
-The [Optro vendor]() platform allows you to publish your Power-Ups to the [Optro]() marketplace which makes it easy for your users to subscribe and to manage their subscriptions.
+The [Optro vendor](https://vendor.optro.cloud/) platform allows you to publish your Power-Ups to the [Optro](https://www.optro.cloud/about) marketplace which makes it easy for your users to subscribe and to manage their subscriptions.
 
 ### Project Structure
 
