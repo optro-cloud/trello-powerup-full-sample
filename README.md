@@ -21,6 +21,16 @@ We've hosted the Power-Up on GitHub Pages so that you can try out the Power-Up w
 4. Finally, navigate to a Trello Board and add the Power-Up from the 'Custom' tab
 5. You should see the Power-Up added to the Board and any functionality is active.
 
+### Customize it
+
+Create a custom build of this sample using our [Generator](https://github.com/optro-cloud/create-trello-powerup).
+
+It's as easy as running ```npx @optro/create-trello-powerup@latest``` in your command line and following the on screen instructions.
+
+The generator allows you to select which features to enable and has integrated support for monetization with [Optro](https://www.optro.cloud/about) using [Optro vendor](https://vendor.optro.cloud/)
+
+**To get started with the generator you can follow our [step-by-step walkthrough](https://docs.appfox.io/optro-vendor/Use-the-Power-Up-Generator.150732928.html).**
+
 ### What capability examples are included?
 
 This template contains everything you need to get developing, hosting and monetizing your own Power-Up, with example extension points, such as:
@@ -46,13 +56,19 @@ This template aims to provide a good starting point for new development and as s
 * 🐟 **Babel** - We use [Babel](https://babeljs.io/) to enable you to write the Power-Up in the latest version of [ECMAScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/), while transpiling the code to a language level that most browsers can understand (ES6).
 * ☂ **ESLint** - Use [ESLint](https://eslint.org/) to check the code for common problems and differences from style guidelines stored in `.eslintrc.json`
 
+### Would you like to make money from your Power-Up?
+
+Until now, adding monetization to a Trello Power-Up is time consuming and can bring a lot of extra work. The great news is that’s now a thing of the past!
+
+[Optro](https://www.optro.cloud), the first marketplace platform for Trello Power-Ups, has now been made available to any developer and makes it easy to monetize your Power-Ups with an integrated licensing system.
+
+It’s [free to sign up](https://vendor.optro.cloud/apply), and once registered follow this [step-by-step guide](https://docs.appfox.io/optro-vendor/Monetize-your-Trello-Power-Ups.153878549.html) to begin adding monetization to your Power-Up.
+
 ### How do I get started developing?
 
-We've made every effort to make getting your own Power-Up up and running as easy as possible.
+The best way to get started is to use the Power-Up Generator to build a template for you in minutes. The Generator uses this repository to generate a new Power-Up (Project) based on your requirements. We would recommend this approach for most developers, especially if you are considering monetization.
 
-The best way to get started is to use the Power-Up Generator, which uses this repository to generate a new Project based on your requirements.
-
-If you'd like to use the template directly without the genereator, please follow the steps below to get going:
+However, if you'd like to use the template directly without the Power-Up Generator, please follow the steps below to get going:
 
 1. Create a new Power-Up on Trello from the [Admin Page](https://trello.com/power-ups/admin)
 2. Enable the capabilities in the 'Capabilities' section that you'd like to enable (e.g. all)
@@ -115,17 +131,11 @@ There are too many ways to fully describe the options here, but the following re
 * Google Cloud (GCP) - [Cloud Run](https://cloud.google.com/run/docs/deploying)
 * Heroku - [Using the Heroku Container Registry](https://devcenter.heroku.com/articles/container-registry-and-runtime) or [Use heroku.yml to automate build/deployment](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
 
-### Coming Soon...
-
-The following features are coming soon:
-
-* Trello Power-Up Generator - This npm package will enable you to make new Trello Power-Ups by answering simple questions on the command line.
-* Monetization Support - We will be expanding this template project to include monetization support by using the [Optro Marketplace platform](https://www.optro.cloud).
-
 ### Where can I get assistance?
 
-There are a number of resources available to help write your Trello Power-Up:
+There are a number of resources available to help build and customize your Trello Power-Up:
 
+* [Step-by-step Guide to Building a Power-Up ](https://vendor.optro.cloud/build-trello-powerup)
 * [Trello Developer Guides](https://developer.atlassian.com/cloud/trello/)
 * [Trello Developer Capability Reference](https://developer.atlassian.com/cloud/trello/power-ups/capabilities/)
 * [Trello Developer REST API Reference](https://developer.atlassian.com/cloud/trello/rest/api-group-actions/)

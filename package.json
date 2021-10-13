@@ -1,6 +1,6 @@
 {
   "name": "trello-powerup-full-sample",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package provides a ready-made Trello Power-Up that can be used to build new Power-Ups. It is used by the create-trello-powerup package to generate user-defined Power-Ups automatically.",
   "main": "index.js",
   "author": "Optro",
