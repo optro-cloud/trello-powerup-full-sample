@@ -3,7 +3,7 @@ import {useProvidedTrello} from '@optro/ui-react';
 import {getAuth, setAuth} from '../api/power-up';
 import '../styles/card.css';
 
-function BoardButton() {
+function ShowAuthorization() {
     const t = useProvidedTrello();
     const [authStatus, setAuthStatus] = useState<boolean | null>(null);
 
@@ -47,4 +47,4 @@ function BoardButton() {
     );
 }
 
-export default BoardButton;
+export default ShowAuthorization;
