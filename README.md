@@ -117,8 +117,8 @@ The easiest way to deploy your Power-Up is by compiling it into static files and
 2. Deploy the `dist/` folder to your chosen Hosting Provider:
 	* AWS - [Host a static website using AWS Amplify](https://aws.amazon.com/getting-started/hands-on/host-static-website/) or [Host a static website with Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
 	* Azure - [Static website hosting in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)
-	* GitHub - [Host a static website with GitHub Pages](https://pages.github.com/)
 	* Heroku - [Host a static website with Heroku Static Buildpack](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-static)
+	* GitHub - [Host a static website with GitHub Pages](https://pages.github.com/) (Not suitable for monetized Power-Ups)
 
 #### Option 2 - Deploy the Power-Up in a Runtime
 
